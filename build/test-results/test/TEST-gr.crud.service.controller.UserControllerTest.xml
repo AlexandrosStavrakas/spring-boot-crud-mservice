@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gr.crud.service.controller.UserControllerTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-05-18T15:10:51" hostname="alex-alienware17r4" time="2.639">
+  <properties/>
+  <testcase name="createUser_ShouldReturnFailExistingMail()" classname="gr.crud.service.controller.UserControllerTest" time="1.606"/>
+  <testcase name="deleteUserById_ShouldReturnFail()" classname="gr.crud.service.controller.UserControllerTest" time="0.359"/>
+  <testcase name="updateUser_ShouldReturnSuccess()" classname="gr.crud.service.controller.UserControllerTest" time="0.077"/>
+  <testcase name="getUserById_ShouldReturnSuccess()" classname="gr.crud.service.controller.UserControllerTest" time="0.128"/>
+  <testcase name="createUser_ShouldReturnSuccess()" classname="gr.crud.service.controller.UserControllerTest" time="0.043"/>
+  <testcase name="createUser_ShouldReturnFailValidation()" classname="gr.crud.service.controller.UserControllerTest" time="0.033"/>
+  <testcase name="updateUser_ShouldReturnFailExistingMail()" classname="gr.crud.service.controller.UserControllerTest" time="0.059"/>
+  <testcase name="updateUser_ShouldReturnFailValidation()" classname="gr.crud.service.controller.UserControllerTest" time="0.054"/>
+  <testcase name="deleteUserById_ShouldReturnSuccess()" classname="gr.crud.service.controller.UserControllerTest" time="0.078"/>
+  <testcase name="getAllUsers_ShouldReturnSuccessAndList()" classname="gr.crud.service.controller.UserControllerTest" time="0.129"/>
+  <testcase name="getUserById_ShouldReturnFail()" classname="gr.crud.service.controller.UserControllerTest" time="0.058"/>
+  <system-out><![CDATA[18:10:46.368 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Neither @ContextConfiguration nor @ContextHierarchy found for test class [UserControllerTest]: using SpringBootContextLoader
+18:10:46.373 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader -- Could not detect default resource locations for test class [gr.crud.service.controller.UserControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+18:10:46.374 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [gr.crud.service.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:10:46.392 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using ContextCustomizers for test class [UserControllerTest]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+18:10:46.497 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider -- Identified candidate component class: file [/home/alex/Documents/spring-boot-crud-mservice/service/build/classes/java/main/gr/crud/service/ServiceApplication.class]
+18:10:46.498 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration gr.crud.service.ServiceApplication for test class gr.crud.service.controller.UserControllerTest
+18:10:46.572 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using TestExecutionListeners for test class [UserControllerTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+18:10:46.574 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener -- Before test class: class [UserControllerTest], class annotated with @DirtiesContext [false] with mode [null]
+18:10:46.584 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener -- Performing dependency injection for test class gr.crud.service.controller.UserControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.6)
+
+2023-05-18T18:10:46.907+03:00  INFO 34523 --- [    Test worker] g.c.s.controller.UserControllerTest      : Starting UserControllerTest using Java 20.0.1 with PID 34523 (started by alex in /home/alex/Documents/spring-boot-crud-mservice/service)
+2023-05-18T18:10:46.909+03:00  INFO 34523 --- [    Test worker] g.c.s.controller.UserControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2023-05-18T18:10:47.940+03:00  INFO 34523 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-18T18:10:47.993+03:00  INFO 34523 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interfaces.
+2023-05-18T18:10:48.545+03:00  INFO 34523 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-05-18T18:10:48.555+03:00  INFO 34523 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-18T18:10:48.556+03:00  INFO 34523 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-18T18:10:48.665+03:00  INFO 34523 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-18T18:10:48.668+03:00  INFO 34523 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1539 ms
+2023-05-18T18:10:48.896+03:00  INFO 34523 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-18T18:10:49.089+03:00  INFO 34523 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:mydb user=SA
+2023-05-18T18:10:49.091+03:00  INFO 34523 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-18T18:10:49.142+03:00  INFO 34523 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-18T18:10:49.186+03:00  INFO 34523 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-05-18T18:10:49.447+03:00  INFO 34523 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-05-18T18:10:50.036+03:00  INFO 34523 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-18T18:10:50.042+03:00  INFO 34523 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-18T18:10:50.505+03:00  WARN 34523 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-18T18:10:51.764+03:00  INFO 34523 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-05-18T18:10:51.842+03:00  INFO 34523 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 38277 (http) with context path ''
+2023-05-18T18:10:51.857+03:00  INFO 34523 --- [    Test worker] g.c.s.controller.UserControllerTest      : Started UserControllerTest in 5.248 seconds (process running for 6.261)
+2023-05-18T18:10:53.328+03:00  INFO 34523 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-18T18:10:53.328+03:00  INFO 34523 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-18T18:10:53.330+03:00  INFO 34523 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

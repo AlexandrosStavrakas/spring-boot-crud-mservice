@@ -1,0 +1,16 @@
+GET http://localhost:32768/api/user
+
+###
+GET http://localhost:32768/api/user/f9a15491-3bde-453d-9478-3b4030c78d7f
+
+###
+POST http://localhost:8080/api/user
+Accept: application/json
+Content-Type: application/json
+
+
+{
+  "email" : "testforpassvodafone@gmail.com",
+  "firstname" : "Alex",
+  "lastname" : "Stavrakas"
+}
