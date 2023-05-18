@@ -1,6 +1,9 @@
 package gr.crud.service.exceptionHandling;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -12,6 +15,9 @@ import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class GenericExceptionHandler {
+
+    @Autowired
+    ObjectMapper objectMapper;
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException ex) {
@@ -34,13 +40,13 @@ public class GenericExceptionHandler {
     }
 
     @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    public ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex) throws JsonProcessingException {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(objectMapper.writeValueAsString(ex.getMessage()));
     }
 
     @ExceptionHandler(UsersEmailAlreadyInUseException.class)
-    public ResponseEntity<Object> handleUsersEmailAlreadyInUseException(UsersEmailAlreadyInUseException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+    public ResponseEntity<Object> handleUsersEmailAlreadyInUseException(UsersEmailAlreadyInUseException ex) throws JsonProcessingException {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(objectMapper.writeValueAsString(ex.getMessage()));
     }
 
 }

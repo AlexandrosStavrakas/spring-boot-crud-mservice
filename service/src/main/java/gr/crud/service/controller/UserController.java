@@ -32,8 +32,8 @@ public class UserController {
             @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = List.class), mediaType = "application/json") })
     })
     @GetMapping
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    public ResponseEntity<List<User>> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @Operation(
@@ -44,8 +44,8 @@ public class UserController {
             @ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) })
     })
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable UUID id) {
-        return userService.findUsersByUserId(id);
+    public ResponseEntity<User> getUserById(@PathVariable UUID id) {
+        return ResponseEntity.ok(userService.findUsersByUserId(id));
     }
 
     @Operation(

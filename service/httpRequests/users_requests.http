@@ -1,7 +1,7 @@
 GET http://localhost:8080/api/user
 
 ###
-GET http://localhost:8080/api/user/6
+GET http://localhost:8080/api/user/245fbfc7-6930-4ca4-96f6-2b2c8079a9f4
 
 ###
 POST http://localhost:8080/api/user
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 
 {
-  "email" : "testforpassvodafone",
+  "email" : "testforpassvodafone@gmail.com",
   "firstname" : "Alex",
   "lastname" : "Stavrakas"
 }
