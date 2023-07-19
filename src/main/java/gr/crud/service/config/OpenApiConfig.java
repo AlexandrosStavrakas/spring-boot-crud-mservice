@@ -18,7 +18,7 @@ public class OpenApiConfig {
 
         Info info = new Info()
                 .contact(contact)
-                .title("Vodafone crud assessment");
+                .title("crud assessment");
 
         return new OpenAPI().info(info);
     }
