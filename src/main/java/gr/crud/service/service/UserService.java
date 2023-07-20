@@ -6,6 +6,7 @@ import gr.crud.service.exceptionHandling.UsersEmailAlreadyInUseException;
 import gr.crud.service.model.UserRequest;
 import gr.crud.service.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    @Cacheable(value = "key", key = "#id")
     public User findUsersByUserId(UUID id) {
         return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("No user found with id".concat(id.toString())));
     }

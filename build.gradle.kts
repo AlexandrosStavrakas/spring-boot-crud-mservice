@@ -31,6 +31,7 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.3")
+	implementation ("org.springframework.data:spring-data-redis:3.1.2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.rest-assured:rest-assured-all")
 	testImplementation("io.rest-assured:rest-assured")

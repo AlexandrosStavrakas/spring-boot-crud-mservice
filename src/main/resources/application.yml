@@ -7,3 +7,13 @@ spring:
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
+  data:
+    redis:
+      cluster:
+        max-redirects: 3
+        nodes: redis1:6379
+      lettuce:
+        cluster:
+          refresh:
+            adaptive: true
+            period: 1s
