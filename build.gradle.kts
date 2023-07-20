@@ -22,21 +22,23 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-validation")
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("com.h2database:h2")
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
-	compileOnly("org.projectlombok:lombok")
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	annotationProcessor("org.projectlombok:lombok")
-	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.3")
-	implementation ("org.springframework.data:spring-data-redis:3.1.2")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("io.rest-assured:rest-assured-all")
-	testImplementation("io.rest-assured:rest-assured")
-	testImplementation("io.rest-assured:json-path")
-	testImplementation("io.rest-assured:xml-path")
+	implementation("org.springframework.boot:spring-boot-starter-validation:3.0.4")
+	implementation("org.springframework.boot:spring-boot-starter-web:3.1.0")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.0.4")
+	implementation("com.h2database:h2:2.1.214")
+	implementation("org.springframework.boot:spring-boot-starter-actuator:3.1.0")
+	compileOnly("org.projectlombok:lombok:1.18.26")
+	developmentOnly("org.springframework.boot:spring-boot-devtools:3.0.4")
+	annotationProcessor("org.projectlombok:lombok:1.18.26")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.4")
+	implementation ("org.springframework.data:spring-data-redis:3.0.6")
+	implementation ("io.lettuce:lettuce-core")
+	implementation("org.apache.commons:commons-pool2")
+	testImplementation("org.springframework.boot:spring-boot-starter-test:3.1.0")
+	testImplementation("io.rest-assured:rest-assured-all:5.3.0")
+	testImplementation("io.rest-assured:rest-assured:5.3.0")
+	testImplementation("io.rest-assured:json-path:5.3.0")
+	testImplementation("io.rest-assured:xml-path:5.3.0")
 }
 
 tasks.withType<Test> {

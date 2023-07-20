@@ -1,0 +1,77 @@
+version: '3'
+services:
+  redis:
+    image: "redis:alpine"
+    hostname: redis
+    #    ports:
+    #      - "6379:6379"
+    networks:
+      app_net:
+        ipv4_address: 173.17.0.11
+  redis1:
+    image: redis:6.0.6
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./docker-data/redis-cluster1.tmpl:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      app_net:
+        ipv4_address: 173.17.0.2
+  redis2:
+    image: redis:6.0.6
+    ports:
+      - "7001:7001"
+    volumes:
+      - ./docker-data/redis-cluster2.tmpl:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      app_net:
+        ipv4_address: 173.17.0.3
+  redis3:
+    image: redis:6.0.6
+    ports:
+      - "7002:7002"
+    volumes:
+      - ./docker-data/redis-cluster3.tmpl:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      app_net:
+        ipv4_address: 173.17.0.4
+  redis4:
+    image: redis:6.0.6
+    ports:
+      - "7003:7003"
+    volumes:
+      - ./docker-data/redis-cluster4.tmpl:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      app_net:
+        ipv4_address: 173.17.0.5
+  redis5:
+    image: redis:6.0.6
+    ports:
+      - "7004:7004"
+    volumes:
+      - ./docker-data/redis-cluster5.tmpl:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      app_net:
+        ipv4_address: 173.17.0.6
+  redis6:
+    image: redis:6.0.6
+    ports:
+      - "7005:7005"
+    volumes:
+      - ./docker-data/redis-cluster6.tmpl:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      app_net:
+        ipv4_address: 173.17.0.7
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 173.17.0.0/16

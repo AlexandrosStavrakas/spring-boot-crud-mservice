@@ -1,19 +1,30 @@
 spring:
-  datasource:
-    url: jdbc:h2:mem:mydb
-    username: sa
-    password: password
-    driverClassName: org.h2.Driver
-  jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-    defer-datasource-initialization: true
   data:
     redis:
+      client-type: lettuce
       cluster:
         max-redirects: 3
-        nodes: redis1:6379
+        nodes:
+          - 173.17.0.2:7000
+          - 173.17.0.3:7001
+          - 173.17.0.4:7002
+          - 173.17.0.5:7003
+          - 173.17.0.6:7004
+          - 173.17.0.7:7005
       lettuce:
         cluster:
           refresh:
             adaptive: true
             period: 1s
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  cache:
+    type: redis
+    redis:
+      time-to-live: 600S
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
